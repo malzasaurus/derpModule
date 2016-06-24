@@ -1,6 +1,6 @@
 bugReporter.directive('reportBug', function(){
 	return {
 		restrict: 'E',
-		templateUrl: ''
+		templateUrl: './directives.html'
 	};
 });
