@@ -1,0 +1,1 @@
+var bugReporter = angular.module('bugReporter', []);
