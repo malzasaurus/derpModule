@@ -7,6 +7,7 @@
         </div>
         <!-- end of header -->
         <div class="modal-body">
+        <!-- We'll need to update the server address on line 11 before production -->
             <form action="http://192.168.1.112:1337/api/collections" method="post">
                 <input type="text" name="comments">
                 <input type="hidden" name="name" id="cookieEnabled" value="" readonly="readonly">
@@ -18,6 +19,7 @@
                 <input type="hidden" name="protocol" id="protocol" value="" readonly="readonly">
                 <input type="hidden" name="browser" id="browser" value="" readonly="readonly">
                 <input type="hidden" name="browserVer" id="browserVer" value="" readonly="readonly">
+                <input type="hidden" name="appId" id="appId" value="ENTER YOUR APP ID HERE" readonly="readonly">
                 <input type="hidden" name="img_val" id="img_val" value="" />
                 <button>Submit</button>
             </form>
