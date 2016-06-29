@@ -64,8 +64,9 @@
      setInputValue('doNotTrack', window.navigator.doNotTrack);
      setInputValue('appVersion', window.navigator.appVersion);
      setInputValue('platform', window.navigator.platform);
-     setInputValue('hostname', window.location.hostname);
-     setInputValue('pathname', window.location.pathname);
+      setInputValue('hostName', window.location.hostname);
+     setInputValue('pathName', window.location.pathname);
+     setInputValue('href', window.location.href)
      setInputValue('protocol', window.location.protocol);
      setInputValue('browser', get_browser().name);
      setInputValue('browserVer', get_browser().version);
@@ -80,12 +81,12 @@
              //Set hidden field's value to image data (base-64 string)
              $('#img_val').val(canvas.toDataURL("image/png"));
              var extra_canvas = document.createElement("canvas");
-             extra_canvas.setAttribute('width', 150);
-             extra_canvas.setAttribute('height', 200);
+             extra_canvas.setAttribute('width', 500);
+             extra_canvas.setAttribute('height', 250);
              var ctx = extra_canvas.getContext('2d');
-             ctx.drawImage(canvas, 0, 0, canvas.width, canvas.height, 0, 0, 150, 200);
-             modal.appendChild(ctx.canvas);
-             setTimeout(displayOnFunction, 3000);
+             ctx.drawImage(canvas, 0, 0, canvas.width, canvas.height, 0, 0, 500, 250);
+             $(ctx.canvas).insertBefore("#bug_form")
+             setTimeout(displayOnFunction, 2000);
          }
      });
 
