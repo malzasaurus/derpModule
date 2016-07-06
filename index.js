@@ -11,6 +11,17 @@
      // When the user clicks the button, open the modal
      btn.onclick = function() {
          showModal(); //taking screenshot
+         //Setting values on form to be sent to server
+         setInputValue('cookieEnabled', window.navigator.cookieEnabled);
+         setInputValue('doNotTrack', window.navigator.doNotTrack);
+         setInputValue('appVersion', window.navigator.appVersion);
+         setInputValue('platform', window.navigator.platform);
+         setInputValue('hostName', window.location.hostname);
+         setInputValue('pathName', window.location.pathname);
+         setInputValue('href', window.location.href)
+         setInputValue('protocol', window.location.protocol);
+         setInputValue('browser', get_browser().name);
+         setInputValue('browserVer', get_browser().version);
          // modal.style.display = "block";
      };
      // When the user clicks on <span> (x), close the modal
@@ -59,17 +70,7 @@
          document.getElementById(formId).setAttribute('value', val);
      }
 
-     //Setting values on form to be sent to server
-     setInputValue('cookieEnabled', window.navigator.cookieEnabled);
-     setInputValue('doNotTrack', window.navigator.doNotTrack);
-     setInputValue('appVersion', window.navigator.appVersion);
-     setInputValue('platform', window.navigator.platform);
-      setInputValue('hostName', window.location.hostname);
-     setInputValue('pathName', window.location.pathname);
-     setInputValue('href', window.location.href)
-     setInputValue('protocol', window.location.protocol);
-     setInputValue('browser', get_browser().name);
-     setInputValue('browserVer', get_browser().version);
+
 
  };
 
