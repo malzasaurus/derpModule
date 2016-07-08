@@ -1,3 +1,37 @@
+#myBtn {
+    background-color: #009688;
+    border-radius: 0 50% 50% 0;
+    box-shadow: 5px 5px 5px gray;
+    border: none;
+    padding: 7px;
+    margin: 2px 0;
+}
+#myBtn img {
+    height: 25px;
+    width: 25px;
+}
+textarea {
+    width: 500px;
+}
+#loading {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    position: fixed;
+    z-index: 1;
+    display: none; 
+}
+#formSubmit {
+    border-radius: 1.5px;
+    background-color: #009688;
+    color: white;
+    height: 27px;
+    width: 66px;
+    border: none;
+}
+#formSubmit:hover {
+    background-color: #4cb5ab;
+}
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -19,7 +53,7 @@
     margin: auto;
     padding: 0;
     border: 1px solid #888;
-    width: 40%;
+    width: 45%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
@@ -55,19 +89,17 @@
 
 .modal-header {
     padding: 2px 16px;
-    background-color: #5cb85c;
+    background-color: #009688;
     color: white;
 }
 
-.modal-body {padding: 2px 16px;}
+.modal-body {padding: 16px 26px;}
 
-.modal-footer {
+/*.modal-footer {
     padding: 2px 16px;
     background-color: #5cb85c;
     color: white;
-}
-
-
+}*/
 
 /*
 

@@ -1,15 +1,15 @@
-<button id="myBtn">Report a Bug</button>
+<button id="myBtn" data-html2canvas-ignore><span><img src="/derpModule/logogh.png"></span></button>   
+<div id='loading' data-html2canvas-ignore><img src="/derpModule/spin.svg"></div>
 <div id="myModal" class='modal'>
     <div class="modal-content">
         <div class="modal-header">
             <span class="close">×</span>
             <h2>Report a Bug</h2>
         </div>
-        <!-- end of header -->
         <div class="modal-body">
-        <!-- We'll need to update the server address on line 11 before production -->
-            <form action="OUR PATH HERE" id='bug_form' method="post">
-                <input type="text" name="formComments">
+            <form action="https://gha-capstone-grasshopper.herokuapp.com/api/bugs" id='bug_form' method="post">
+                <h5>Comments:</h5>
+                <textarea name='formComments'></textarea>
                 <input type="hidden" name="cookieEnabled" id="cookieEnabled" value="" readonly="readonly">
                 <input type="hidden" name="doNotTrack" id="doNotTrack" value="" readonly="readonly">
                 <input type="hidden" name="appVersion" id="appVersion" value="" readonly="readonly">
@@ -22,9 +22,8 @@
                 <input type="hidden" name="browserVer" id="browserVer" value="" readonly="readonly">
                 <input type="hidden" name="appId" id="appId" value="ENTER YOUR APP ID HERE" readonly="readonly">
                 <input type="hidden" name="img_val" id="img_val" value="" />
-                <button>Submit</button>
+                <button id='formSubmit'>Submit</button>
             </form>
         </div>
     </div>
-    <!-- end of content -->
 </div>

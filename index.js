@@ -4,37 +4,43 @@
 
      // Get the button that opens the modal
      var btn = document.getElementById("myBtn");
+     btn.style.display = 'inline';
+
+     var loader = document.getElementById('loading');
 
      // Get the <span> element that closes the modal
      var span = document.getElementsByClassName("close")[0];
 
      // When the user clicks the button, open the modal
      btn.onclick = function() {
-         showModal(); //taking screenshot
-         //Setting values on form to be sent to server
-         setInputValue('cookieEnabled', window.navigator.cookieEnabled);
-         setInputValue('doNotTrack', window.navigator.doNotTrack);
-         setInputValue('appVersion', window.navigator.appVersion);
-         setInputValue('platform', window.navigator.platform);
-         setInputValue('hostName', window.location.hostname);
-         setInputValue('pathName', window.location.pathname);
-         setInputValue('href', window.location.href)
-         setInputValue('protocol', window.location.protocol);
-         setInputValue('browser', get_browser().name);
-         setInputValue('browserVer', get_browser().version);
-         // modal.style.display = "block";
+        loader.style.display = 'block'; //turning the loader on
+        showModal(); //taking screenshot
+        //Setting values on form to be sent to server
+        setInputValue('cookieEnabled', window.navigator.cookieEnabled);
+        setInputValue('doNotTrack', window.navigator.doNotTrack);
+        setInputValue('appVersion', window.navigator.appVersion);
+        setInputValue('platform', window.navigator.platform);
+        setInputValue('hostName', window.location.hostname);
+        setInputValue('pathName', window.location.pathname);
+        setInputValue('href', window.location.href);
+        setInputValue('protocol', window.location.protocol);
+        setInputValue('browser', get_browser().name);
+        setInputValue('browserVer', get_browser().version);
      };
      // When the user clicks on <span> (x), close the modal
      span.onclick = function() {
-         modal.style.display = "none";
+        $(ctx.canvas).remove();  //remove the screenshot if the modal is dismissed so we do not have multiple screenshots
+        modal.style.display = "none"; //hide the modal
+        btn.style.display = 'inline'; //unhide the button
      };
      // When the user clicks anywhere outside of the modal, close it
      window.onclick = function(event) {
          if (event.target == modal) {
-             modal.style.display = "none";
+            $(ctx.canvas).remove(); //remove the screenshot if the modal is dismissed so we do not have multiple screenshots
+            modal.style.display = "none"; //hide the modal
+            btn.style.display = 'inline'; //unhide the button
          }
      };
-
      // function to get browser name and version
      function get_browser() {
          var ua = navigator.userAgent,
@@ -64,15 +70,12 @@
              version: M[1]
          };
      }
-
      //function to dynamically set form values
      function setInputValue(formId, val) {
          document.getElementById(formId).setAttribute('value', val);
      }
-
-
-
  };
+var ctx; //defining the canvas element so we can use it outside of the showModal function
 
  function showModal() {
      var modal = document.getElementById('myModal');
@@ -84,15 +87,18 @@
              var extra_canvas = document.createElement("canvas");
              extra_canvas.setAttribute('width', 500);
              extra_canvas.setAttribute('height', 250);
-             var ctx = extra_canvas.getContext('2d');
+             // var ctx = extra_canvas.getContext('2d');
+             ctx = extra_canvas.getContext('2d');
              ctx.drawImage(canvas, 0, 0, canvas.width, canvas.height, 0, 0, 500, 250);
-             $(ctx.canvas).insertBefore("#bug_form")
+             $(ctx.canvas).insertBefore("#bug_form");
              setTimeout(displayOnFunction, 2000);
          }
      });
 
      function displayOnFunction() {
-         modal.style.display = 'block';
-         btn.style.display = 'none';
+        var loader = document.getElementById('loading');
+        modal.style.display = 'block';
+        btn.style.display = 'none'; //turning the bug button 
+        loader.style.display = 'none';  //turning the loader off
      }
  }
