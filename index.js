@@ -1,4 +1,31 @@
  window.onload = function() {
+    //start capturing logs
+    var logOfConsole = [];
+
+    var _log = window.console.log,
+        _warn = window.console.warn,
+        _error = window.console.error;
+
+    console.log = function() {
+        var obj = {method: 'log', arguments: arguments}
+        var string = JSON.stringify(obj)
+        logOfConsole.push(string);
+        return _log.apply(console, arguments);
+    };
+
+    console.warn = function() {
+        var obj = {method: 'warn', arguments: arguments}
+        var string = JSON.stringify(obj)
+        logOfConsole.push(string);
+        return _warn.apply(console, arguments);
+    };
+
+    console.error = function() {
+        var obj = {method: 'error', arguments: arguments}
+        var string = JSON.stringify(obj)
+        logOfConsole.push(string);
+        return _error.apply(console, arguments);
+    };
      // Get the modal
      var modal = document.getElementById('myModal');
 
@@ -26,6 +53,7 @@
         setInputValue('protocol', window.location.protocol);
         setInputValue('browser', get_browser().name);
         setInputValue('browserVer', get_browser().version);
+        setInputValue('logs', logOfConsole.join(","));
      };
      // When the user clicks on <span> (x), close the modal
      span.onclick = function() {
