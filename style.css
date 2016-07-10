@@ -1,19 +1,45 @@
-#myBtn {
+#paint {
+    z-index: 1;
+    position: absolute; 
+    top: 0; 
+    left:; 0; 
+}
+#bugModule{
+    z-index: 2;
+    position: relative;
+}
+#bugModule li {
+    list-style-type: none;
+}
+#bugModule #create {
     background-color: #009688;
-    border-radius: 0 50% 50% 0;
+    border-radius: 0 0 50% 0;
     box-shadow: 5px 5px 5px gray;
     border: none;
     padding: 7px;
-    margin: 2px 0;
+    margin-top: 2px;
 }
-#myBtn img {
+#bugModule #create img {
     height: 25px;
     width: 25px;
 }
-textarea {
+
+#bugModule #myBtn {
+    background-color: #009688;
+    border-radius: 0 50% 0 0;
+    box-shadow: 5px 5px 5px gray;
+    border: none;
+    padding: 7px;
+    margin-top: 2px;
+}
+#bugModule #myBtn img {
+    height: 25px;
+    width: 25px;
+}
+#bugModule textarea {
     width: 500px;
 }
-#loading {
+#bugModule #loading {
     width: 100%;
     margin: 0 auto;
     text-align: center;
@@ -21,7 +47,7 @@ textarea {
     z-index: 1;
     display: none; 
 }
-#formSubmit {
+#bugModule #formSubmit {
     border-radius: 1.5px;
     background-color: #009688;
     color: white;
@@ -29,14 +55,14 @@ textarea {
     width: 66px;
     border: none;
 }
-#formSubmit:hover {
+#bugModule #formSubmit:hover {
     background-color: #4cb5ab;
 }
-.modal {
+#bugModule .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding-top: 25px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -47,7 +73,7 @@ textarea {
 }
 
 /* Modal Content */
-.modal-content {
+#bugModule .modal-content {
     position: relative;
     background-color: #fefefe;
     margin: auto;
@@ -73,81 +99,26 @@ textarea {
 }
 
 /* The Close Button */
-.close {
+#bugModule .close {
     color: white;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+#bugModule .close:hover,
+#bugModule .close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
 }
 
-.modal-header {
+#bugModule .modal-header {
     padding: 2px 16px;
     background-color: #009688;
     color: white;
 }
 
-.modal-body {padding: 16px 26px;}
-
-/*.modal-footer {
-    padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
-}*/
-
-/*
-
-#showModalButton {
-    font-size: 24px;
-    font-family: 'Fjalla One', sans-serif !important;
-    color: #ffffff;
-    background-color: #000000;
-    border-radius: 10px;
-    padding: 1%;
-    margin: 16% auto;
-    display: block;
-    width: 20%;
-    border: none;
+#bugModule .modal-body {
+    padding: 16px 26px;
 }
-
-#modalContainer {
-    background-color: #8e44ad;
-    min-height: 200px;
-    width: 80%;
-    margin: 2% auto;
-    display: none;
-    border-radius: 10px;
-    padding: 5% 5% 3%;
-}
-
-#modalContent, #modalContent p {
-    font-family: 'Average', serif !important;
-    color: #ecf0f1;
-    font-size: 20px;
-    text-align: center;
-}
-
-#modalContent h1 {
-    font-family: 'Fjalla One', sans-serif !important;
-    font-size: 48px;
-    text-transform: uppercase;
-    margin-bottom: 2%;
-}
-
-#hideModalButton {
-    font-size: 24px;
-    font-family: 'Fjalla One', sans-serif;
-    color: #ffffff;
-    background-color: #000000;
-    border-radius: 10px;
-    padding: 1%;
-    margin: 3% 3% 0;
-    border: none;
-    width: 20%;
-}*/

@@ -4,7 +4,5 @@
 * npm install derpModule  
 * add in script tag for index.js  
   * add in script tag to be copied  
-* add in script tag for directives.js  
-  * add in script tag to be copied  
-* add in button directive
-  * <report-bug></report-bug>
+* add html from directives.html to your main html file  
+* input your app id into the modal html
