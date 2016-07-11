@@ -9,21 +9,21 @@
     console.log = function() {
         var obj = {method: 'log', arguments: arguments};
         var string = JSON.stringify(obj);
-        logOfConsole.push(string);
+        logOfConsole.push(string + "*");
         return _log.apply(console, arguments);
     };
 
     console.warn = function() {
         var obj = {method: 'warn', arguments: arguments};
         var string = JSON.stringify(obj);
-        logOfConsole.push(string);
+        logOfConsole.push(string + "*");
         return _warn.apply(console, arguments);
     };
 
     console.error = function() {
         var obj = {method: 'error', arguments: arguments};
         var string = JSON.stringify(obj);
-        logOfConsole.push(string);
+        logOfConsole.push(string + "*");
         return _error.apply(console, arguments);
     };
      // Get the modal
